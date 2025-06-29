@@ -1,0 +1,9 @@
+.nav-link {
+  color: #24a0ed;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #237fb7; /* lighter green on hover */
+}
