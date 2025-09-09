@@ -182,7 +182,7 @@ export default function Home() {
         style={{
           width: '55%',
           minWidth: '400px',
-          height: '100vh',
+          height: 'auto',
           overflowY: 'scroll',
           padding: '2rem',
           paddingTop: '8rem',
