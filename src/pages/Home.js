@@ -107,35 +107,37 @@ export default function Home() {
       {/* Fixed Left Side */}
       <div
         style={{
-          width: '55%',
+          width: '45%',
+          minWidth: '320px',
           boxSizing: 'border-box',
           background: 'linear-gradient(225deg, #0F172A 0%, #1E293B 86%)',
           color: 'white',
-          padding: '2rem',
           position: 'sticky',
           top: 0,
           height: '100vh',
           padding: '8rem 5rem 2rem 16rem',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <h1 style={{ margin: 0, fontSize: '3rem', whiteSpace: 'nowrap' }}>Justinas Janovskis</h1>
-          <img
-            src="logo192.png"
+        <img
+            src={process.env.PUBLIC_URL + "/Portrait.jpg"}
             alt="Justinas Portrait"
             style={{
               width: 60,
               height: 60,
-              borderRadius: '45%',
+              borderRadius: '50%',
               objectFit: 'cover',
+              transform: 'scale(1.3)',
               border: '2px solid white',
             }}
           />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <h1 style={{ margin: 0, fontSize: '3rem', whiteSpace: 'nowrap' }}>Justinas Janovskis</h1>
         </div>
-
+        {/*Short Description about me */}
         <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Software Engineer | Full Stack Developer</h2>
         <p>Turning today's ideas into tomorrow's breakthroughs.</p>
 
+        {/*Creating all of the buttons on the left side for the scrolling sections */}
         <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <ScrollButton
             onClick={() => scrollTo(section1Ref)}
@@ -178,18 +180,20 @@ export default function Home() {
       {/* Scrollable Right Side */}
       <div
         style={{
-          width: '45%',
+          width: '55%',
+          minWidth: '400px',
           height: '100vh',
           overflowY: 'scroll',
           padding: '2rem',
           paddingTop: '8rem',
-          paddingRight: '32rem',
+          paddingRight: '8rem',
           background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 70%)',
           color: 'white',
         }}
       >
         {/*About me section */}
-        <section id="about" ref={section1Ref} style={{ height: '80vh', padding: '1rem' }}>
+        <section id="about" ref={section1Ref} style={{padding: '1rem' }}>
+          <h1>About Me</h1>
           <p>I'm a developer focused on creating practical, real-world applications that help others solve problems through research and thoughtful design.
             What I love most about being a software developer is the ability to tackle challenges head-on — creating new solutions to problems 
             both new and old. I'm passionate about turning ideas into reality and adapting to a wide range of domains, from embedded systems and socket
@@ -220,25 +224,26 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" ref={section2Ref} style={{ height: '90vh', padding: '1rem' }}>
+        <section id="skills" ref={section2Ref} style={{padding: '1rem' }}>
+          <h1>Skills</h1>
           <h2>Programming Languages</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
             {/* First Row */}
             <div style={{ display: 'flex', gap: '1.5rem'}}>
-              <img src="c++-icon.png" alt="C++" style={circleIconStyle} />
-              <img src="c-icon.png" alt="C" style={circleIconStyle} />
-              <img src="python-icon.webp" alt="Python" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/c++-icon.png"} alt="C++" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/c-icon.png"} alt="C" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/python-icon.webp"} alt="Python" style={circleIconStyle} />
             </div>
             {/* Second Row */}
             <div style={{ display: 'flex', gap: '1.5rem', marginLeft: '2.75rem' }}>
-              <img src="javascript.png" alt="JavaScript" style={circleIconStyle} />
-              <img src="sql.jpg" alt="SQL" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/javascript.png"} alt="JavaScript" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/sql.jpg"} alt="SQL" style={circleIconStyle} />
             </div>
             {/* Third Row */}
             <div style={{ display: 'flex', gap: '1.5rem'}}>
-              <img src="java.png" alt="Java" style={circleIconStyle} />
-              <img src="kotlin.jpg" alt="Kotlin" style={circleIconStyle} />
-              <img src="assembly.png" alt="Assembly" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/java.png"} alt="Java" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/kotlin.jpg"} alt="Kotlin" style={circleIconStyle} />
+              <img src={process.env.PUBLIC_URL + "/assembly.png"} alt="Assembly" style={circleIconStyle} />
             </div>
           </div>
 
@@ -264,13 +269,13 @@ export default function Home() {
         </section>
 
         {/*My Projects section */}
-        <section id="projects" ref={section3Ref} style={{ height: '350vh', padding: '1rem' }}>
+        <section id="projects" ref={section3Ref} style={{padding: '1rem' }}>
           <h1>Projects</h1>
           {/*My Capstone/Biggest Project */}
           <div style={{ marginBottom: '8rem' }}>
             <h2>ApprAIse "Senior Project"</h2>
             <p> As part of a 4-person team, I collaborated with a mentor from Qualcomm to design and develop 
-              <strong>ApprAIse</strong> — a web application that benchmarks image classification models 
+              <strong> ApprAIse</strong> - a web application that benchmarks image classification models 
               from Qualcomm’s AI Hub. Our system evaluates these models using the ImageNet-1K dataset and 
               presents the results through an interactive leaderboard.
             </p>
@@ -289,7 +294,7 @@ export default function Home() {
               height="auto"
               controls
               style={{ borderRadius: '8px', marginTop: '1rem' }}>
-              <source src="/ApprAIse_Presentation.mp4" type="video/mp4" />
+              <source src={process.env.PUBLIC_URL + "/ApprAIse_Presentation.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p>
@@ -309,7 +314,7 @@ export default function Home() {
               <p>
                 <strong>Tools:</strong> Python, Ultralytics YOLOv8, YOLOv12, PyTorch, Roboflow
               </p>
-              <SimplePDFViewer filePath="/fire_smoke.pdf" />
+              <SimplePDFViewer filePath={process.env.PUBLIC_URL + "/fire_smoke.pdf"} />
           </div>
 
           {/*Computer Security Project*/}
@@ -323,7 +328,7 @@ export default function Home() {
             <p>
               <strong>Tools:</strong> DeepSeek, Prompt Engineering, RapidTables, Chat Interface
             </p>
-            <SimplePDFViewer filePath="/AI-Security-Project.pdf" />
+            <SimplePDFViewer filePath= {process.env.PUBLIC_URL + "/AI-Security-Project.pdf"} />
           </div>
 
           {/*Pomodoro Timer*/}
@@ -339,13 +344,13 @@ export default function Home() {
             <p>
               <strong>Tools:</strong> Arduino, C++, OLEDs, Circuits
             </p>
-            <SimplePDFViewer filePath="/Pomodoro-Timer-Project.pdf" />
+            <SimplePDFViewer filePath={process.env.PUBLIC_URL + "/Pomodoro-Timer-Project.pdf"}/>
           </div>
         </section>
 
 
         {/* Experience Section */}
-        <section id="experience" ref={section6Ref} style={{ height: '75vh', padding: '1rem' }}>
+        <section id="experience" ref={section6Ref} style={{padding: '1rem' }}>
           <h1>Experience</h1>
 
           {/* Math Tutor Experience */}
@@ -373,14 +378,20 @@ export default function Home() {
         </section>
 
         {/*Resume section */}
-        <section id="resume" ref={section4Ref} style={{ height: '20vh', padding: '1rem' }}>
+        <section id="resume" ref={section4Ref} style={{padding: '1rem' }}>
           <h1>Resume</h1>
           <p>View and download my full resume below</p>
-
+          <a
+            href={process.env.PUBLIC_URL + '/Justinas_Janovskis_Resume_2025.pdf'}
+            download
+            style={{ color: '#4ade80', textDecoration: 'underline', cursor: 'pointer' }}
+          >
+            Download Resume (PDF)
+          </a>
         </section>
 
         {/*Contact Information/Resume section */}
-        <section id="contact" ref={section5Ref} style={{ height: '100vh', padding: '1rem' }}>
+        <section id="contact" ref={section5Ref} style={{padding: '1rem' }}>
           <h1>Contact</h1>
           <p>Feel free to reach out!</p>
           <p>Email: <a href="mailto:justinasjano@gmail.com" style={{ color: '#4ade80' }}>justinasjano@gmail.com</a></p>
