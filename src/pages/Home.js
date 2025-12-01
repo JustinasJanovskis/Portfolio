@@ -382,7 +382,7 @@ export default function Home() {
           <h1>Resume</h1>
           <p>View and download my full resume below</p>
           <a
-            href={process.env.PUBLIC_URL + '/Justinas_Janovskis_Resume_2025.pdf'}
+            href={process.env.PUBLIC_URL + '/Justins_Resume.pdf'}
             download
             style={{ color: '#4ade80', textDecoration: 'underline', cursor: 'pointer' }}
           >
